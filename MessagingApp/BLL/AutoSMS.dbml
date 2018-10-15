@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AutoSMS" Class="AutoSMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-E1J0I29\MSSQLSERVER328;Initial Catalog=AutoSMS;Persist Security Info=True;User ID=sa" SettingsObjectName="MessagingApp.Properties.Settings" SettingsPropertyName="AutoSMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tb_logs" Member="tb_logs">
+    <Type Name="tb_log">
+      <Column Name="logger_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isFromServer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sender_mobile_number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isCommandSent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="msg_text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isUserReplied" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="to_command_time_stamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="to_user_time_stamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tb_user_tb_log" Member="tb_user" ThisKey="user_id" OtherKey="user_id" Type="tb_user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_network_codes" Member="tb_network_codes">
+    <Type Name="tb_network_code">
+      <Column Name="uid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="network" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_client_config" Member="tb_client_configs">
+    <Type Name="tb_client_config">
+      <Column Name="Client" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="port" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_login_user" Member="tb_login_users">
+    <Type Name="tb_login_user">
+      <Column Name="uid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="creation_date" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_users" Member="tb_users">
+    <Type Name="tb_user">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mobile_number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="section" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tb_user_tb_log" Member="tb_logs" ThisKey="user_id" OtherKey="user_id" Type="tb_log" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_gateway_config" Member="tb_gateway_configs">
+    <Type Name="tb_gateway_config">
+      <Column Name="tb_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ipaddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="port" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tsc1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tsc2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t15" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="welcomemsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwLogs" Member="vwLogs">
+    <Type Name="vwLog">
+      <Column Name="Log_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile_Number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Command" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
