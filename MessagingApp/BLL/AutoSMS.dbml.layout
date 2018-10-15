@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AutoSMS">
+  <DataContextMoniker Name="/AutoSMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f26db90f-a760-47d6-b9d8-5222556f1b54" absoluteBounds="3.375, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94988dc3-ef4b-40de-8ea9-63b3f6118f49" absoluteBounds="3.3899999999999997, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c18270d-bb9b-437c-a514-69d3e0565731" absoluteBounds="5.875, 3, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_network_code" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a722894-314c-48b8-812d-90f6b8f7c230" absoluteBounds="5.8900000000000006, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa296c06-3f29-4fce-a678-53c2d1c69930" absoluteBounds="1.25, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_client_config" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5440d7a1-e4af-4f8c-987f-84b76c757032" absoluteBounds="1.2649999999999997, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eaa4c315-0fcf-4a3c-8991-44be14cb6495" absoluteBounds="1.25, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_login_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a77159c4-ca70-428d-a240-4b84b78cb7e1" absoluteBounds="1.2649999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4c12847-d1be-4f8c-a88d-17f4ff7457f2" absoluteBounds="6, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0311c274-0947-4ee8-9bdb-3950b9ed4b8f" absoluteBounds="6.015, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 1.76044840494792); (5.375 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AutoSMSDataContext/tb_user/tb_user_tb_log" />
+      <nodes>
+        <classShapeMoniker Id="a4c12847-d1be-4f8c-a88d-17f4ff7457f2" />
+        <classShapeMoniker Id="f26db90f-a760-47d6-b9d8-5222556f1b54" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f085ff02-2dec-491d-8b5d-d8737f934f34" absoluteBounds="3.375, 3.125, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AutoSMSDataContext/tb_gateway_config" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5fc36e1-5dd3-4ff8-a52e-04fd8fb324ee" absoluteBounds="3.3899999999999997, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b737272-1e8c-41a9-9442-1b5da3272ddf" absoluteBounds="6.125, 4.875, 2, 0.80938964843749961">
+      <DataClassMoniker Name="/AutoSMSDataContext/vwLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dd4661c-3703-4d53-b625-148bb94a97bf" isExpanded="false" absoluteBounds="6.14, 5.335, 1.9700000000000002, 0.2493896484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
